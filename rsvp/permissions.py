@@ -9,7 +9,7 @@ class IsAppAuthorized_rsvp(permissions.BasePermission):
         pk = view.kwargs.get(view.lookup_field)
         app = 'rsvp'
         token = request.query_params.get('token')
-        r = requests.post('http://api.wedfairy.com/api/appstore/authorize/',
+        r = requests.post('http://api.bayinhe.mobi/api/appstore/authorize/',
                           data={'id': pk, 'app': app, 'token': token})
         if r.status_code == 200:
             return True
@@ -22,7 +22,7 @@ class IsAppAuthorized_guest(permissions.BasePermission):
         pk = view.kwargs.get(view.lookup_field)
         app = 'rsvp'
         token = request.query_params.get('token')
-        r = requests.post('http://api.wedfairy.com/api/appstore/authorize/',
+        r = requests.post('http://api.bayinhe.mobi/api/appstore/authorize/',
                           data={'id': pk, 'app': app, 'token': token})
         if r.status_code == 200:
             return True

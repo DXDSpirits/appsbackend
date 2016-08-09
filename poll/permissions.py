@@ -10,7 +10,7 @@ class IsAppAuthorized_poll(permissions.BasePermission):
         pk = view.kwargs.get(view.lookup_field)
         app = 'poll'
         token = request.query_params.get('token')
-        r = requests.post('http://api.wedfairy.com/api/appstore/authorize/',
+        r = requests.post('http://api.bayinhe.mobi/api/appstore/authorize/',
                           data={'id': pk, 'app': app, 'token': token})
         if r.status_code == 200:
             return True
@@ -23,7 +23,7 @@ class IsAppAuthorized_poll_vote(permissions.BasePermission):
         pk = view.kwargs.get(view.lookup_field)
         app = 'poll'
         token = request.query_params.get('token')
-        r = requests.post('http://api.wedfairy.com/api/appstore/authorize/',
+        r = requests.post('http://api.bayinhe.mobi/api/appstore/authorize/',
                           data={'id': pk, 'app': app, 'token': token})
         if r.status_code == 200:
             return True
@@ -38,7 +38,7 @@ class IsAppAuthorized_option_vote(permissions.BasePermission):
         pk = option.poll_id
         app = 'poll'
         token = request.query_params.get('token')
-        r = requests.post('http://api.wedfairy.com/api/appstore/authorize/',
+        r = requests.post('http://api.bayinhe.mobi/api/appstore/authorize/',
                           data={'id': pk, 'app': app, 'token': token})
         if r.status_code == 200:
             return True
